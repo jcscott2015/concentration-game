@@ -1,5 +1,23 @@
 import './index.css';
+//import { getNewDeck } from './api/get-cards';
+/*eslint-disable no-console*/
+//console.info(getNewDeck());
+import { FlipCards } from './controllers/flip-cards';
+import { CardImages } from './controllers/card-images';
 
+let flipCards = new FlipCards('card', 'side');
+flipCards.addFlipEvent();
+
+let cardImages = new CardImages();
+const images = cardImages.gatherCardFaces();
+
+let twoClubs = document.getElementById('2C');
+twoClubs.src = images['2_of_clubs'];
+
+let cardBackImg = document.getElementById('card-back');
+cardBackImg.src = cardImages.getCardBack();
+
+/*
 import {getUsers, deleteUser} from './api/userApi';
 
 // Populate table of users via API call.
@@ -39,3 +57,4 @@ getUsers().then(result => {
     };
   });
 });
+*/

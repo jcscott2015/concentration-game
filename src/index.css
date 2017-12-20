@@ -5,3 +5,74 @@ body {
 table th {
   padding: 5px
 }
+
+
+/* Card Styles */
+
+.card {
+  margin: 10px;
+  float: left;
+}
+
+.card img {
+  height: 100%;
+}
+
+.card,
+.card>.front,
+.card>.back {
+  width: 50px;
+  height: 73px;
+}
+
+.card>.front,
+.card>.back {
+  position: absolute;
+  border-radius: 7px;
+}
+
+.card>.front {
+  -webkit-transform: perspective( 600px) rotateY( 180deg);
+  -ms-transform: perspective( 600px) rotateY( 180deg);
+  -o-transform: perspective( 600px) rotateY( 180deg);
+  transform: perspective( 600px) rotateY( 180deg);
+  background: #80BFFF;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .5s linear 0s;
+  transition: -ms-transform .5s linear 0s;
+  transition: -o-transform .5s linear 0s;
+  transition: transform .5s linear 0s;
+}
+
+.card>.back {
+  -webkit-transform: perspective( 600px) rotateY( 0deg);
+  -ms-transform: perspective( 600px) rotateY( 0deg);
+  -o-transform: perspective( 600px) rotateY( 0deg);
+  transform: perspective( 600px) rotateY( 0deg);
+  background: #FC0;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .5s linear 0s;
+  transition: -ms-transform .5s linear 0s;
+  transition: -o-transform .5s linear 0s;
+  transition: transform .5s linear 0s;
+}
+
+.card>.front.flip {
+  -webkit-transform: perspective( 600px) rotateY( 0deg);
+  -ms-transform: perspective( 600px) rotateY( 0deg);
+  -o-transform: perspective( 600px) rotateY( 0deg);
+  transform: perspective( 600px) rotateY( 0deg);
+}
+
+.card>.back.flip {
+  -webkit-transform: perspective( 600px) rotateY( -180deg);
+  -ms-transform: perspective( 600px) rotateY( -180deg);
+  -o-transform: perspective( 600px) rotateY( -180deg);
+  transform: perspective( 600px) rotateY( -180deg);
+}
