@@ -23,7 +23,7 @@ export default {
       noInfo: true // set to false to see a list of every file being bundled.
     }),
 
-        // Create HTML file that includes reference to bundled JS.
+    // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({ // Create HTML file that includes references to bundled CSS and JS.
       template: 'src/index.html'
     }),
@@ -35,11 +35,17 @@ export default {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
-        }, {
+    }, {
+      test: /\.(png|jpg|svg)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'file-loader'
+      },
+    }, {
       test: /(\.css|\.scss|\.sass)$/,
       exclude: /node_modules/,
       use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
+        fallback: 'style-loader',
         use: [{
           loader: 'css-loader',
           options: {

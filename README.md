@@ -1,11 +1,13 @@
 # concentration-game
+
 ## Deck of Cards Concentration Game
 
 This is a game developed with a starter kit that uses webpack 3, mocha, chai, and jsdom 11.
+
 ## Get Started
 
 1. **Install [Node LTS](https://nodejs.org)**. Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
-2. **Clone this repository.** - `git clone https://github.com/jcscott2015/js-starterkit.git` or [download the zip](https://github.com/jcscott2015/concentration-game/archive/master.zip)
+2. **Clone this repository.** - `git clone https://github.com/jcscott2015/concentration-game.git` or [download the zip](https://github.com/jcscott2015/concentration-game/archive/master.zip)
 3. **Make sure you're in the directory you just created.** - `cd javascript-development-environment`
 4. **Install Node Packages.** - `npm install`
 5. **Run the app.** - `npm start -s`
@@ -29,7 +31,7 @@ This will run linting and tests and then build the app and place minimized and o
 | **Dependency**              | **Use**                                                                                                   |
 | --------------------------- | --------------------------------------------------------------------------------------------------------- |
 | promise-polyfill                   | Lightweight promise polyfill. A+ compliant                                                                              |
-| whatwg-fetch                  | A window.fetch polyfill
+| whatwg-fetch                   | A window.fetch polyfill
 
 ### Development Dependencies
 
@@ -41,7 +43,10 @@ This will run linting and tests and then build the app and place minimized and o
 | babel-preset-env         | Babel preset for running all the latest standardized JavaScript features                                  |
 | babel-register              | Register Babel to transpile our Mocha tests                                                               |
 | chai                       | Node BDD/TDD assertion library for node.js and the browser. Test framework agnostic.                                                                                |
+| chai-as-promised                       | Extends Chai with assertions about promises.                                                                                |
+| chai-fetch-mock                       | Chai plugin for fetch-mock library                                                                                |
 | chalk                       | Node Terminal string styling done right                                                                                |
+| cheerio                     | Supports querying DOM with jQuery like syntax - Useful in testing and build process for HTML manipulation |
 | compression                       | Node.js compression middleware                                                                                |
 | cross-env                   | Cross-environment friendly way to handle environment variables                                            |
 | css-loader                  | Add CSS support to Webpack                                                                                |
@@ -51,6 +56,7 @@ This will run linting and tests and then build the app and place minimized and o
 | express        | Fast, unopinionated, minimalist web framework                                                                   |
 | extract-text-webpack-plugin | Extracts CSS into separate file for production build                                                      |
 | fetch-mock | Mock http requests made using fetch (or isomorphic-fetch)                                                      |
+| file-loader                | File loader module for webpack                                                                              |
 | html-webpack-plugin                      | Simplifies creation of HTML files to serve your webpack bundles                                                                      |
 | jsdom                       | In-memory DOM for testing                                                                                 |
 | jsdom-schema-faker                       | JSON-Schema + fake data generators                                                                                 |
@@ -64,6 +70,8 @@ This will run linting and tests and then build the app and place minimized and o
 | numeral                 | Format and manipulate numbers                                               |
 | rimraf                      | Delete files                                                                                              |
 | sass-loader                  | Add SASS loading support to Webpack                                                                        |
+| sinon                  | JavaScript test spies, stubs and mocks.                                                                        |
 | style-loader                | Add Style support to Webpack                                                                              |
+| url-loader                | URL loader module for webpack                                                                              |
 | webpack                     | Bundler with plugin system and integrated development server                                              |
 | webpack-dev-middleware      | Adds middleware support to webpack                                                                        |
