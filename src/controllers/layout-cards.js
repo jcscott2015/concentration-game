@@ -1,7 +1,6 @@
 import { getNewDeck } from '../model/get-cards';
 import { CardImages } from '../controllers/card-images';
 import { Concentration } from '../controllers/concentration';
-import { setTimeout } from 'timers';
 
 /**
  * Use WebPack to load card images.
@@ -185,6 +184,7 @@ export class LayoutCards {
    * Freeze click events on all selected card.
    */
   freezeSelected(cardWrapper) {
+    cardWrapper.style.cursor = 'default';
     cardWrapper.removeEventListener('click', this.flipCard);
     cardWrapper.removeEventListener('click', this.cardCheck);
   }
@@ -195,6 +195,7 @@ export class LayoutCards {
   freezeUnmatched() {
     const unMatchedCards = this.getUnmatchedCards();
     [...unMatchedCards].forEach(cardWrapper => {
+      cardWrapper.style.cursor = 'default';
       // remove click flip event listener
       cardWrapper.removeEventListener('click', this.flipCard);
       // remove click event to compare 2 selected cards
@@ -208,6 +209,7 @@ export class LayoutCards {
   unfreezeUnmatched() {
     const unMatchedCards = this.getUnmatchedCards();
     [...unMatchedCards].forEach(cardWrapper => {
+      cardWrapper.style.cursor = 'pointer';
       // add click flip event listener
       this.addFlipEvent(cardWrapper);
       // add click event to compare 2 selected cards
@@ -235,8 +237,9 @@ export class LayoutCards {
     cardWrapper.setAttribute('data-suit', card.suit);
     cardWrapper.setAttribute('data-matched', false);
     cardWrapper.setAttribute('data-flipped', false);
-    // Store the card data in the cardWrapper DOM for rasy access.
+    // Store the card data in the cardWrapper DOM for easy access.
     cardWrapper.card = card;
+    cardWrapper.style.cursor = 'pointer';
 
     // back with card image element
     let back = document.createElement('div');
