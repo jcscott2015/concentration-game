@@ -30,7 +30,7 @@ export class LayoutCards {
       frontClass: 'front',
       backClass: 'back',
       layoutId: 'game',
-      flipBackTimeout: 2000
+      flipBackTimeout: 1000
     };
 
     // overwrite defaults
@@ -159,6 +159,9 @@ export class LayoutCards {
           let selected = document.getElementById(card.code);
           selected.setAttribute('data-matched', true);
           this.freezeSelected(selected);
+          setTimeout(() => {
+            selected.style.visibility = 'hidden';
+          }, this.options.flipBackTimeout);
         });
 
         // unfreeze click events on all unmatched cards
