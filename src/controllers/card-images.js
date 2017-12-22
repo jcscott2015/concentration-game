@@ -1,4 +1,3 @@
-/*eslint-disable no-console*/
 import cardBack from '../img/playing-card-back.png';
 
 /**
@@ -40,11 +39,4 @@ export class CardImages {
     }
     return faces;
   }
-
-  // let twoClubs = document.getElementById('2C');
-  // twoClubs.src = images['2_of_clubs'];
-
-  // let cardBackImg = document.getElementById('card-back');
-  // cardBackImg.src = cardBack;
-
 }

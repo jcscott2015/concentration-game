@@ -29,5 +29,5 @@ function onSuccess(response) {
  * @param {obj} error
  */
 function onError(error) {
-  console.error(error); // eslint-disable-line no-console
+  console.error(`Error geting the cards. ${error}`); // eslint-disable-line no-console
 }
