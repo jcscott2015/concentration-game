@@ -43,7 +43,7 @@ h1 {
 
 #game-area,
 #game {
-  width: 1024px;
+  width: 975px;
   height: auto;
   margin: 0 auto;
 }
@@ -67,8 +67,8 @@ h1 {
 .card,
 .card>.front,
 .card>.back {
-  width: 70px;
-  height: 102px;
+  width: 67px;
+  height: 97px;
 }
 
 .card>.front,
