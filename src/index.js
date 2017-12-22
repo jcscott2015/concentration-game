@@ -1,60 +1,18 @@
+import './reset.css';
 import './index.css';
-//import { getNewDeck } from './api/get-cards';
-/*eslint-disable no-console*/
-//console.info(getNewDeck());
-import { FlipCards } from './controllers/flip-cards';
-import { CardImages } from './controllers/card-images';
+import { LayoutCards } from './controllers/layout-cards';
 
-let flipCards = new FlipCards('card', 'side');
-flipCards.addFlipEvent();
+let startBtn = document.getElementById('new-game');
+startBtn.addEventListener('click', function () {
+  const gameArea = document.getElementById('game-area');
 
-let cardImages = new CardImages();
-const images = cardImages.gatherCardFaces();
+  // Destroy any old game
+  if (document.getElementById('game')) {
+    const game = document.getElementById('game');
+    game.parentNode.removeChild(game);
+  }
 
-let twoClubs = document.getElementById('2C');
-twoClubs.src = images['2_of_clubs'];
-
-let cardBackImg = document.getElementById('card-back');
-cardBackImg.src = cardImages.getCardBack();
-
-/*
-import {getUsers, deleteUser} from './api/userApi';
-
-// Populate table of users via API call.
-getUsers().then(result => {
-  let usersBody = "";
-
-  result.forEach(user => {
-    usersBody += `<tr>
-      <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</a></td>
-      <td>${user.id}</td>
-      <td>${user.firstName}</td>
-      <td>${user.lastName}</td>
-      <td>${user.email}</td>
-      </tr>`
-  });
-
-  global
-    .document
-    .getElementById('users')
-    .innerHTML = usersBody;
-
-  const deleteLinks = global
-    .document
-    .getElementsByClassName('deleteUser');
-
-  // Must use array.from to create a real array from a DOM collection
-  // getElementsByClassname only returns an "array like" object
-  Array.from(deleteLinks, link => {
-    link.onclick = function (event) {
-      const element = event.target;
-      event.preventDefault();
-      deleteUser(element.attributes["data-id"].value);
-      const row = element.parentNode.parentNode;
-      row
-        .parentNode
-        .removeChild(row);
-    };
-  });
+  // Create game
+  let layoutCards = new LayoutCards();
+  gameArea.appendChild(layoutCards.getLayout());
 });
-*/
