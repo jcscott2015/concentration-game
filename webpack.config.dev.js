@@ -28,7 +28,7 @@ export default {
       template: 'src/index.html'
     }),
 
-    new ExtractTextPlugin("index.css")
+    new ExtractTextPlugin("css/index.css")
   ],
   module: {
     rules: [{

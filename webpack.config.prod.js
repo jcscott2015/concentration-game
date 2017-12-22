@@ -16,7 +16,7 @@ export default {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: '[name].[chunkhash].js'
+    filename: 'js/[name].[chunkhash].js'
       //chunkFilename: "[chunkhash].[id].chunk.js"
   },
   plugins: [
@@ -27,7 +27,7 @@ export default {
     }),
 
     // Generate an external css file with a hash in the filename
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    new ExtractTextPlugin('css/[name].[contenthash].css'),
 
     /* Use CommonsChunkPlugin to create a separate bundle of vendor libraries so that they're cached separately. */
     new webpack
@@ -82,7 +82,7 @@ export default {
         loader: 'url-loader',
         options: {
           limit: 15000,
-          name: '[name].[ext]'
+          name: 'img/[name].[ext]'
         }
       },
     }, {
