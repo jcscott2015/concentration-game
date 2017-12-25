@@ -1,5 +1,5 @@
-import './css/reset.css';
-import './css/index.css';
+import './style/reset.css';
+import './style/index.scss';
 import { LayoutCards } from './controllers/layout-cards';
 
 let startBtn = document.getElementById('new-game');

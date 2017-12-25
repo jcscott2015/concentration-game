@@ -1,0 +1,131 @@
+$dark-green: #89b356;
+$light-green: #a6d968;
+$charcoal: #333;
+$medium-grey: #666;
+$white: #fff;
+html {
+  height: 100%;
+  background: $dark-green;
+  background-repeat: no-repeat;
+  /* IE10+ */
+  background-image: -ms-radial-gradient(center, ellipse farthest-corner, $light-green 0%, $dark-green 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-radial-gradient(center, ellipse farthest-corner, $light-green 0%, $dark-green 100%);
+  /* Opera */
+  background-image: -o-radial-gradient(center, ellipse farthest-corner, $light-green 0%, $dark-green 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(0, $light-green), color-stop(100, $dark-green));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-radial-gradient(center, ellipse farthest-corner, $light-green 0%, $dark-green 100%);
+  /* W3C Markup */
+  background-image: radial-gradient(ellipse farthest-corner at center, $light-green 0%, $dark-green 100%);
+}
+
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 18px;
+  line-height: 22px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#new-game {
+  display: block;
+  line-height: 20px;
+  font-size: 16px;
+  background-color: $charcoal;
+  padding: 4px 12px;
+  color: $white;
+  border-radius: 10px;
+  margin: 20px auto;
+  border: none;
+  cursor: pointer;
+}
+
+#new-game:hover {
+  background-color: $medium-grey;
+}
+
+#game-area,
+#game {
+  width: 975px;
+  height: auto;
+  margin: 0 auto;
+}
+
+#game p {
+  text-align: center;
+}
+
+
+/* Card Styles */
+
+@mixin transform($per, $deg) {
+  -webkit-transform: perspective($per) rotateY($deg);
+  -ms-transform: perspective($per) rotateY($deg);
+  -o-transform: perspective($per) rotateY($deg);
+  transform: perspective($per) rotateY($deg);
+}
+
+@mixin transition {
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .5s linear 0s;
+  transition: -ms-transform .5s linear 0s;
+  transition: -o-transform .5s linear 0s;
+  transition: transform .5s linear 0s;
+}
+
+.card {
+  margin: 4px;
+  float: left;
+}
+
+.card img {
+  height: 100%;
+}
+
+.card,
+.card>.front,
+.card>.back {
+  width: 67px;
+  height: 97px;
+}
+
+.card>.front,
+.card>.back {
+  position: absolute;
+  border-radius: 7px;
+}
+
+.card>.front {
+  @include transform(600px, 180deg);
+  @include transition;
+}
+
+.card>.back {
+  @include transform(600px, 0deg);
+  @include transition;
+}
+
+.card>.front.flip {
+  @include transform(600px, 0deg);
+}
+
+.card>.back.flip {
+  @include transform(600px, -180deg);
+}
