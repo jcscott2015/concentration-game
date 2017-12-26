@@ -1,4 +1,5 @@
 import './css/reboot.css';
+import './css/clearfix.css';
 import './scss/index.scss';
 import { LayoutCards } from './controllers/layout-cards';
 
