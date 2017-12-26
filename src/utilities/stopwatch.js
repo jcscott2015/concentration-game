@@ -1,4 +1,10 @@
 // from https://codepen.io/_Billy_Brown/pen/dbJeh
+/**
+ * let stopwatch = new Stopwatch(
+    document.querySelector('.stopwatch'),
+    document.querySelector('.results'));
+ */
+
 export class Stopwatch {
   constructor(display, results) {
     this.running = false;

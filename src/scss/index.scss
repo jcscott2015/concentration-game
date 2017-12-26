@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background: $dark-green;
+  background-color: $dark-green;
   background-repeat: no-repeat;
   /* IE10+ */
   background-image: -ms-radial-gradient(center, ellipse farthest-corner, $light-green 0%, $dark-green 100%);
