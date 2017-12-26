@@ -1,8 +1,4 @@
-$dark-green: #89b356;
-$light-green: #a6d968;
-$charcoal: #333;
-$medium-grey: #666;
-$white: #fff;
+@import "colors";
 html {
   height: 100%;
   background: $dark-green;
@@ -21,23 +17,11 @@ html {
   background-image: radial-gradient(ellipse farthest-corner at center, $light-green 0%, $dark-green 100%);
 }
 
-body {
-  padding: 20px;
-}
-
 h1 {
   text-align: center;
   font-size: 32px;
   font-weight: bold;
   line-height: 36px;
-}
-
-h2 {
-  text-align: center;
-  font-size: 18px;
-  line-height: 22px;
-  width: 75%;
-  margin: 0 auto;
 }
 
 #new-game {
@@ -57,15 +41,21 @@ h2 {
   background-color: $medium-grey;
 }
 
-#game-area,
+#game-area {
+  padding: 20px;
+  min-width: 1015px;
+}
+
+#game-area p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 #game {
   width: 975px;
   height: auto;
   margin: 0 auto;
-}
-
-#game p {
-  text-align: center;
 }
 
 
