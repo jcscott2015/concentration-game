@@ -69,7 +69,7 @@ export class LayoutCards {
       .then(result => {
         if (typeof result === 'undefined') {
           console.error("Result is undefined."); // eslint-disable-line no-console
-          throw this.displayException("Oh my, there was a problem dealing the cards! Check your internet connection.")
+          throw this.displayException("Oh my, there was a problem dealing the cards! Check your internet connection.");
         }
         for (let c = 0; c < result.cards.length; c++) {
           let cards = result.cards[c];
@@ -234,7 +234,7 @@ export class LayoutCards {
    */
   buildCard(card) {
     // card wrapper
-    let cardWrapper = document.createElement('div')
+    let cardWrapper = document.createElement('div');
     cardWrapper.className = this.options.cardClass;
     cardWrapper.id = card.code;
     cardWrapper.setAttribute('data-value', card.value);
