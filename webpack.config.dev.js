@@ -25,7 +25,8 @@ export default {
 
     // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({ // Create HTML file that includes references to bundled CSS and JS.
-      template: 'src/index.html'
+      template: 'src/index.html',
+      favicon: 'src/favicon.ico'
     }),
 
     new ExtractTextPlugin("css/index.css")

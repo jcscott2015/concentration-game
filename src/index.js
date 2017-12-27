@@ -1,3 +1,4 @@
+import './favicons/favicons';
 import './css/reboot.css';
 import './scss/index.scss';
 import { LayoutCards } from './controllers/layout-cards';
