@@ -38,7 +38,6 @@ export class LayoutCards {
 
     this.layout = document.createElement('div');
     this.layout.id = this.options.layoutId;
-    this.layout.className = 'clearfix';
 
     this.constructGame();
   }

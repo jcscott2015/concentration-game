@@ -58,6 +58,7 @@ h1 {
 #game {
   width: 975px;
   height: auto;
+  line-height: 0;
   margin: 0 auto;
 }
 
@@ -83,25 +84,20 @@ h1 {
 }
 
 .card {
+  display: inline-block;
   margin: 4px;
-  float: left;
-}
-
-.card img {
-  height: 100%;
 }
 
 .card,
 .card>.front,
 .card>.back {
   width: 67px;
-  height: 97px;
+  height: 96px;
 }
 
 .card>.front,
 .card>.back {
   position: absolute;
-  border-radius: 7px;
 }
 
 .card>.front {
@@ -120,4 +116,10 @@ h1 {
 
 .card>.back.flip {
   @include transform(600px, -180deg);
+}
+
+// Card faces and card back have different proportions. Force card face proportion to match card back proportion.
+.card img {
+  height: 100%;
+  width: 100%;
 }
