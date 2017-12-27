@@ -25,11 +25,12 @@ export default {
 
     // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({ // Create HTML file that includes references to bundled CSS and JS.
+      title: 'Concentration Game',
       template: 'src/index.html',
-      favicon: 'src/favicon.ico'
+      xhtml: true
     }),
 
-    new ExtractTextPlugin("css/index.css")
+    new ExtractTextPlugin('css/index.css')
   ],
   module: {
     rules: [{
